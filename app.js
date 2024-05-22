@@ -1,7 +1,7 @@
 var msg = 'Hello World';
 console.log(msg);
 
-function calculateTimeBetweenDates(date1, date2) => {
+function calculateTimeBetweenDates(date1, date2) {
     const diffInMilliseconds = Math.abs(date2 - date1);
     const diffInSeconds = Math.floor(diffInMilliseconds / 1000);
     const diffInMinutes = Math.floor(diffInSeconds / 60);
@@ -25,15 +25,15 @@ function calculateDistanceBetween2Points(point1, point2) {
 }
 
 function bubbleSort(arr) {
-    for (let i = 0; i < arr.length - 1; i++) {
-        for (let j = 0; j < arr.length - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                // Swap arr[j] and arr[j+1]
-                let temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+    let swapped;
+    do {
+        swapped = false;
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]]; // Swap using destructuring assignment
+                swapped = true;
             }
         }
-    }
+    } while (swapped);
     return arr;
 }
