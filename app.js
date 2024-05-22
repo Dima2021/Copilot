@@ -1,14 +1,20 @@
 var msg = 'Hello World';
 console.log(msg);
 
-
-function calculateDaysBetweenDates(date1, date2) {
-    var diffInMilliseconds = Math.abs(date2 - date1);
-    var days = Math.ceil(diffInMilliseconds / (1000 * 60 * 60 * 24));
-    return days;
-} 
-
-var startDate = new Date('2022-01-01');
-var endDate = new Date('2022-12-31');
-console.log(calculateDaysBetweenDates(startDate, endDate));
+function calculateTimeBetweenDates
+(date1, date2) => {
+    const diffInMilliseconds = Math.abs(date2 - date1);
+    const diffInSeconds = Math.floor(diffInMilliseconds / 1000);
+    const diffInMinutes = Math.floor(diffInSeconds / 60);
+    const diffInHours = Math.floor(diffInMinutes / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+    
+    return {
+        milliseconds: diffInMilliseconds,
+        seconds: diffInSeconds,
+        minutes: diffInMinutes,
+        hours: diffInHours,
+        days: diffInDays
+    };
+}
 
