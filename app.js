@@ -17,11 +17,23 @@ function calculateTimeBetweenDates(date1, date2) => {
     };
 }
 
-function calculateTimeBetweenDates(date1, date2) {
-    const diffInMilliseconds = Math.abs(date2 - date1);
-    const diffInDays = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
-    
-    return diffInDays;
+function calculateDistanceBetween2Points(point1, point2) {
+    const xDiff = point2.x - point1.x;
+    const yDiff = point2.y - point1.y;
+    const distance = Math.sqrt(xDiff ** 2 + yDiff ** 2);
+    return distance;
 }
 
-
+function bubbleSort(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Swap arr[j] and arr[j+1]
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    return arr;
+}
