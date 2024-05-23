@@ -4,4 +4,10 @@ function calculateTimeBetweenDates
 function calculateDistanceBetween2Points
 
 function bubbleSort
+- Optimize
 
+function mergeSort
+
+function QuickSort
+
+function RadixSort
