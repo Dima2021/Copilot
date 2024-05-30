@@ -79,3 +79,8 @@ function RadixSort(arr) {
     }
     return arr;
 }
+
+// Optimize the RadixSort function by using a more efficient sorting algorithm
+function optimizedRadixSort(arr) {
+    return arr.sort((a, b) => a - b);
+}
