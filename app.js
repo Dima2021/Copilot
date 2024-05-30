@@ -65,3 +65,17 @@ function QuickSort(arr) {
     }
     return [...QuickSort(left), pivot, ...QuickSort(right)];
 }
+
+function RadixSort(arr) {
+    const maxNum = Math.max(...arr);
+    let divisor = 1;
+    while (divisor < maxNum) {
+        let buckets = Array.from({ length: 10 }, () => []);
+        for (let num of arr) {
+            buckets[Math.floor((num / divisor) % 10)].push(num);
+        }
+        arr = [].concat(...buckets);
+        divisor *= 10;
+    }
+    return arr;
+}
